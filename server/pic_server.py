@@ -7,12 +7,16 @@ import os
 host = '140.116.96.107'  # 對server端為主機位置
 port = 5555
 address = (host, port)
+PATH = os.getcwd() + "\\PICS\\"
 
 socket01 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # AF_INET:默認IPv4, SOCK_STREAM:TCP
 
 socket01.bind(address)  # 讓這個socket要綁到位址(ip/port)
+if not os.path.isdir(PATH):
+    os.mkdir(PATH)
 while(1):
+
     socket01.listen(1)  # listen(backlog)
     # backlog:操作系統可以掛起的最大連接數量。該值至少為1，大部分應用程序設為5就可以了
     print('Socket Startup')
