@@ -4,7 +4,7 @@ import socket
 import struct
 import os
 
-host = '140.116.96.107'  # 對server端為主機位置
+host = '{server IP}'  # 對server端為主機位置
 port = 5555
 address = (host, port)
 
